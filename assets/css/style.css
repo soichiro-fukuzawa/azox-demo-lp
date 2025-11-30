@@ -1,0 +1,1023 @@
+/* --- Variables --- */
+:root {
+    /* メインカラー: 赤系カラーを維持 (#BD2024〜#C63035) */
+    --color-primary: #BD2024;
+
+    /* アクセントカラー */
+    --color-accent: #D4AF37;
+    /* ゴールド（バッジ等） */
+    --color-line: #7BB52E;
+    /* LINEブランディングカラー */
+    --color-insta: #E4405F;
+    /* Instagramブランディングカラー */
+
+    /* テキスト・背景 */
+    --color-text: #000000;
+    /* 黒 */
+    --color-bg-gray: #F8F8F8;
+    /* 淡いグレー（コンテンツ背景） */
+    --color-dark-bg: #090302;
+    /* ヘッダー・フッター背景（濃色） */
+
+    /* フォント・レイアウト */
+    --font-main: "Noto Sans JP", sans-serif;
+    --container-width: 1000px;
+    --header-height: 70px;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: #fff;
+    padding-top: var(--header-height);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: var(--container-width);
+}
+
+/* --- Utility Classes --- */
+.text-red {
+    color: var(--color-primary);
+}
+
+.text-red-bold {
+    color: var(--color-primary);
+    font-weight: 900;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* マーカー風の下線 */
+.text-marker {
+    background: linear-gradient(transparent 60%, #ffff00 60%);
+    padding: 0 4px;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+/* コンテンツ背景色（薄いグレー） */
+.section--gray {
+    background-color: var(--color-bg-gray);
+}
+
+/* 赤背景セクション（アクセントとして維持） */
+.section--red-bg {
+    background-color: var(--color-primary);
+    color: #fff;
+    background-image: linear-gradient(135deg, #a50000 0%, #bd2024 100%);
+}
+
+.section__title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 900;
+}
+
+.section__title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+}
+
+.section__title--white::after {
+    background-color: #fff;
+}
+
+/* ボタン */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 900;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+/* --- Header --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-dark-bg);
+    /* 背景を濃色に変更 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    height: var(--header-height);
+    color: #fff;
+    /* ヘッダー内の基本文字色を白に */
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.header__logo {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #fff;
+    /* ロゴ色を白に */
+}
+
+.logo-sub {
+    font-size: 0.7rem;
+    color: #ccc;
+    /* サブテキストを薄いグレーに */
+    font-weight: normal;
+    display: block;
+}
+
+/* Mobile Nav (Hamburger) */
+.header__nav {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background-color: rgba(255, 255, 255, 0.98);
+    /* モバイルメニュー背景は白のまま維持 */
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.header__nav.is-active {
+    right: 0;
+}
+
+.nav__list {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.nav__link {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    /* モバイル時は背景白なので文字黒 */
+    display: block;
+    padding: 10px;
+}
+
+.nav__btn {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger Button */
+.header__hamburger {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.header__hamburger span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    /* 濃色背景に合わせて白に変更 */
+    left: 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.header__hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.header__hamburger span:nth-child(2) {
+    top: 9px;
+}
+
+.header__hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+.header__hamburger.is-active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 9px;
+    background-color: #333;
+    /* 開いた時は背景白なので黒 */
+}
+
+.header__hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.header__hamburger.is-active span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 9px;
+    background-color: #333;
+}
+
+/* PC Nav Styles */
+@media (min-width: 1024px) {
+    .header__hamburger {
+        display: none;
+    }
+
+    .header__nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        display: block;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .nav__link {
+        font-size: 0.95rem;
+        padding: 0;
+        color: #fff;
+        /* PCヘッダーは濃色なので文字白 */
+    }
+
+    .nav__link:hover {
+        color: var(--color-primary);
+        /* ホバーでメインカラー */
+        opacity: 1;
+    }
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    padding: 60px 0 80px;
+    background: linear-gradient(160deg, #fff5f5 0%, #ffffff 50%, #f0f0f0 100%);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 200%;
+    background: rgba(189, 32, 36, 0.05);
+    /* メインカラーの薄色 */
+    transform: rotate(-15deg);
+    z-index: 0;
+}
+
+.hero__container {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero__badge {
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    background: radial-gradient(circle at 30% 30%, #ffd700, #d4af37);
+    color: #fff;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(169, 137, 28, 0.4);
+    border: 4px solid #fff;
+    transform: rotate(-10deg);
+    z-index: 3;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero__badge p {
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+.hero__badge span {
+    font-size: 1.4rem;
+    font-weight: 900;
+    display: block;
+    margin: 2px 0;
+}
+
+.hero__badge small {
+    font-size: 0.7rem;
+}
+
+.hero__content {
+    margin-top: 40px;
+}
+
+.hero__sub {
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transform: skewX(-10deg);
+}
+
+.hero__sub span {
+    display: inline-block;
+    transform: skewX(10deg);
+}
+
+.hero__title {
+    /* 文字が増えたのでサイズを少し調整 */
+    font-size: 2.0rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    font-weight: 900;
+    color: #333;
+    margin: 20px 0 40px;
+}
+
+.hero__title .big-red {
+    color: var(--color-primary);
+    font-size: 1.3em;
+    /* display: block; */
+}
+
+.hero__lead {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    background: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hero__person {
+    margin: 20px auto 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero__person img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .hero__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        padding: 0 40px;
+    }
+
+    .hero__badge {
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero__badge p {
+        font-size: 0.9rem;
+    }
+
+    .hero__badge span {
+        font-size: 1.8rem;
+    }
+
+    .hero__content {
+        flex: 1;
+        padding-left: 100px;
+        padding-right: 40px;
+    }
+
+    .hero__title {
+        font-size: 2.6rem;
+    }
+
+    /* 少しサイズ調整 */
+    .hero__title .big-red {
+        display: inline;
+    }
+
+    .hero__lead {
+        font-size: 1.2rem;
+    }
+
+    .hero__person {
+        margin: 0;
+        width: 220px;
+        height: 220px;
+        flex-shrink: 0;
+    }
+
+    .hero__cta {
+        text-align: left;
+    }
+}
+
+/* --- Merit Section --- */
+.merit__grid {
+    display: grid;
+    gap: 20px;
+}
+
+.merit__item {
+    background: #fff;
+    /* カードは白背景 */
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-bottom: 4px solid var(--color-primary);
+}
+
+.merit__icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.merit__item h3 {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+@media (min-width: 768px) {
+    .merit__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+/* --- Service Section --- */
+.service__grid {
+    display: grid;
+    gap: 30px;
+}
+
+.service__card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    /* カードは白背景 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.service__card:hover {
+    transform: translateY(-5px);
+}
+
+.service__img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service__body {
+    padding: 20px;
+    text-align: center;
+}
+
+.service__title {
+    background: var(--color-primary);
+    color: #fff;
+    display: inline-block;
+    padding: 6px 15px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.service__desc {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.service__price {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    line-height: 1.2;
+    background: #fff5f5;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+}
+
+.price-val {
+    font-size: 2.8rem;
+    letter-spacing: -0.05em;
+}
+
+.tax {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: normal;
+}
+
+.service__note {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 10px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .service__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* --- Price Table Section (Refined) --- */
+.price-table-wrapper {
+    overflow-x: auto;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.price-table th,
+.price-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #000;
+    /* 全てのテキストを黒に */
+}
+
+/* テーブルヘッダー (シンプルに) */
+.price-table thead th {
+    background-color: #fff;
+    color: #000;
+    /* ヘッダーも黒に */
+    font-weight: 900;
+    border-bottom: 2px solid #333;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* カテゴリ区切り行 */
+.price-table .separator th {
+    background-color: #fafafa;
+    color: var(--color-primary);
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 900;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: none;
+}
+
+/* サブカテゴリ行 */
+.price-table .sub-header td {
+    background-color: transparent;
+    color: #000;
+    /* サブカテゴリも黒に */
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: none;
+    padding-left: 24px;
+    text-align: left !important;
+}
+
+/* 価格列 */
+.price-table td:last-child {
+    text-align: right;
+    font-family: var(--font-main);
+    width: 200px;
+}
+
+.price-table .text-red-bold {
+    color: var(--color-primary);
+    font-weight: 900;
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+/* 税込価格の縮小表示 */
+.tax-included {
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: normal;
+    margin-top: 4px;
+}
+
+/* --- FAQ Section --- */
+.faq__list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq__item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    /* アコーディオン項目は白背景 */
+}
+
+.faq__question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 20px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text);
+}
+
+.faq__question::before {
+    content: "Q.";
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-right: 10px;
+    font-weight: 900;
+}
+
+.faq__icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.faq__icon::before,
+.faq__icon::after {
+    content: "";
+    position: absolute;
+    background-color: #333;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.faq__icon::before {
+    width: 100%;
+    height: 2px;
+}
+
+.faq__icon::after {
+    height: 100%;
+    width: 2px;
+    transition: 0.3s;
+}
+
+.faq__question.is-open .faq__icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+}
+
+.faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fafafa;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.faq__answer-inner {
+    padding: 20px;
+    padding-top: 0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    display: flex;
+}
+
+.faq__answer-inner::before {
+    content: "A.";
+    color: var(--color-primary);
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* --- Contact Section --- */
+.section--contact {
+    background-color: #fff;
+    border-top: 10px solid var(--color-primary);
+}
+
+.contact__container {
+    text-align: center;
+}
+
+.contact__title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color: var(--color-primary);
+}
+
+.contact__lead {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.contact__box {
+    background: #fff5f5;
+    border: 3px solid var(--color-primary);
+    border-radius: 10px;
+    padding: 30px 20px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.tel-number {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+.tel-label,
+.tel-time {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.contact__actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.action__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-placeholder {
+    width: 120px;
+    height: 120px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    color: #777;
+    font-size: 0.8rem;
+    border: 2px solid #ccc;
+    font-weight: bold;
+}
+
+/* SNSカラー適用 (LINE) */
+.action-line .qr-placeholder {
+    border-color: var(--color-line);
+    color: var(--color-line);
+    background-color: #f0fdf4;
+}
+
+.action-line p {
+    color: var(--color-line);
+}
+
+/* SNSカラー適用 (Instagram - 将来用) */
+.action-insta .qr-placeholder {
+    border-color: var(--color-insta);
+    color: var(--color-insta);
+    background-color: #fdf2f8;
+}
+
+.action-insta p {
+    color: var(--color-insta);
+}
+
+.action__item p {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- Company Info --- */
+.company-table dl {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.company-table dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.company-table dd {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+    .tel-number {
+        font-size: 3.5rem;
+    }
+
+    .company-table dl {
+        flex-direction: row;
+    }
+
+    .company-table dt {
+        width: 20%;
+        min-width: 150px;
+    }
+
+    .company-table dd {
+        width: 80%;
+    }
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-dark-bg);
+    /* フッター背景を濃色に */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* ギザギザ吹き出し */
+
+
+/* ギザギザ吹き出し */
+.gizagiza .gizagiza-box,
+.gizagiza .gizagiza-box:after,
+.gizagiza .gizagiza-box:before,
+.gizagiza .gizagiza-box .gizagiza-box-text {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    position: absolute;
+    top: 0px;
+}
+
+.gizagiza,
+.gizagiza .gizagiza-box,
+.gizagiza .gizagiza-box:after,
+.gizagiza .gizagiza-box:before {
+    -webkit-transform: rotate(22.5deg);
+    -moz-transform: rotate(22.5deg);
+}
+
+.gizagiza .gizagiza-box .gizagiza-box-text {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    text-align: center;
+    z-index: 999;
+    line-height: 100px;
+    color: #fff;
+}
+
+.gizagiza {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    margin: 20px 0 0 20px;
+}
