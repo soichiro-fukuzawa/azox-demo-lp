@@ -342,12 +342,17 @@ ul {
 /* --- Hero Section --- */
 .hero {
     position: relative;
-    padding: 60px 0 80px;
-    background: linear-gradient(160deg, #fff5f5 0%, #ffffff 50%, #f0f0f0 100%);
+    padding: 0 0 80px;
+    /* 変更箇所: 背景をリフォーム後のイメージ画像に変更し、白の半透明レイヤーを重ねて文字を見やすくする */
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url('../img/hero-bg-renovation.png');
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
+    /* backdrop-filter: blur(3px); */
+    /* filter: blur(3px); */
 }
 
-.hero::before {
+/* .hero::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -355,10 +360,9 @@ ul {
     width: 80%;
     height: 200%;
     background: rgba(189, 32, 36, 0.05);
-    /* メインカラーの薄色 */
     transform: rotate(-15deg);
     z-index: 0;
-}
+} */
 
 .hero__container {
     position: relative;
@@ -424,13 +428,18 @@ ul {
 }
 
 .hero__title {
-    /* 文字が増えたのでサイズを少し調整 */
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     line-height: 1.3;
     margin-bottom: 20px;
     font-weight: 900;
     color: #333;
     margin: 20px 0 40px;
+    background: rgb(255 255 255 / 70%);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    word-break: keep-all;
+    display: inline-block;
 }
 
 .hero__title .big-red {
@@ -443,7 +452,7 @@ ul {
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 30px;
-    background: #fff;
+    background: rgb(255 255 255 / 70%);
     display: inline-block;
     padding: 10px 20px;
     border-radius: 8px;
@@ -467,6 +476,14 @@ ul {
 }
 
 @media (min-width: 768px) {
+    .hero {
+        padding: 60px 0 80px;
+        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url('../img/hero-bg-renovation-pc.png');
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+
     .hero__container {
         display: flex;
         align-items: center;

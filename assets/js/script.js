@@ -57,4 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- 4. 料金表 アコーディオン（スマホのみ機能） ---
+    const priceTriggers = document.querySelectorAll('.js-price-accordion');
+
+    priceTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            trigger.classList.toggle('is-open');
+            const content = trigger.nextElementSibling;
+
+            if (trigger.classList.contains('is-open')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
 });
