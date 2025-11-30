@@ -145,6 +145,12 @@ ul {
     background-color: #fff;
 }
 
+/* セクション末尾のCTAコンテナ */
+.section__cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
 /* ボタン */
 .btn-primary {
     display: inline-block;
@@ -158,12 +164,128 @@ ul {
     border: 2px solid #fff;
     text-align: center;
     letter-spacing: 0.05em;
+    /* 共通のトランジション */
+    transition: all 0.3s;
 }
 
 .btn-primary:hover {
     background-color: #fff;
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
+}
+
+/* --- 追加: ファーストビュー(ヒーロー)用ボタンの強調スタイル --- */
+/* アニメーション定義: 注目を集めるための緩やかな鼓動 */
+@keyframes pulse-btn {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(189, 32, 36, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(189, 32, 36, 0.6);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(189, 32, 36, 0.4);
+    }
+}
+
+/* ヒーローセクション内のボタンにのみ適用 */
+.hero__cta .btn-primary {
+    /* グラデーションで立体感を出す */
+    background: linear-gradient(to bottom, #ff6b6b, var(--color-primary));
+    border: none;
+    /* 枠線は削除してシャドウで表現 */
+    border-bottom: 5px solid #8a171a;
+    /* ボタンの「厚み」を表現する濃い赤 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    /* 文字をくっきりさせる */
+    position: relative;
+    /* 沈み込み動作のため */
+    top: 0;
+    padding: 18px 50px;
+    /* 少し大きく */
+    /* アニメーション適用 */
+    animation: pulse-btn 2s infinite ease-in-out;
+}
+
+/* 三角矢印アイコンを追加 */
+.hero__cta .btn-primary::after {
+    content: " \25B6";
+    /* 三角形 */
+    font-size: 0.8em;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* ホバー時の挙動（PC向け）: アニメーションを停止し、少し明るく */
+.hero__cta .btn-primary:hover {
+    animation: none;
+    background: linear-gradient(to bottom, #ff8585, #d93035);
+    color: #fff;
+    /* 文字色は白のまま */
+    border: none;
+    border-bottom: 5px solid #8a171a;
+    transform: scale(1.05);
+}
+
+/* クリック/タップ時の挙動（沈み込み） */
+.hero__cta .btn-primary:active {
+    animation: none;
+    border-bottom: 2px solid #8a171a;
+    /* 厚みを減らす */
+    top: 3px;
+    /* 下にずらす */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+}
+
+/* 追加: テキストリンク用のスタイル */
+.link-arrow {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: underline;
+    transition: opacity 0.3s;
+    position: relative;
+    padding-right: 1.2em;
+    /* 矢印のスペース */
+}
+
+.link-arrow::after {
+    content: ">";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: Arial, sans-serif;
+    transition: right 0.3s;
+}
+
+.link-arrow:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.link-arrow:hover::after {
+    right: -5px;
+    /* ホバー時に矢印が少し動く */
+}
+
+/* セクション末尾のリンク用（少し大きく） */
+.section__cta .link-arrow {
+    font-size: 1.3rem;
+}
+
+/* サービスカード内のリンク用（カード内での配置調整） */
+.service__body .link-arrow {
+    font-size: 1rem;
+    margin-top: 15px;
+    align-self: center;
 }
 
 /* --- Header --- */
@@ -609,6 +731,15 @@ ul {
 .service__body {
     padding: 20px;
     text-align: center;
+    flex-grow: 1;
+    /* 高さを揃えるため */
+    display: flex;
+    flex-direction: column;
+}
+
+/* コンテンツ下部にボタンを寄せるためのスペーサー */
+.service__body>*:last-child {
+    margin-top: auto;
 }
 
 .service__title {
@@ -658,6 +789,7 @@ ul {
     margin-top: 10px;
     text-align: left;
     line-height: 1.4;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
@@ -666,82 +798,203 @@ ul {
     }
 }
 
-/* --- Price Table Section (Refined) --- */
-.price-table-wrapper {
-    overflow-x: auto;
+/* --- Price Table Section (Accordion & Responsive) --- */
+/* テーブルスタイルを廃止し、リストスタイルに変更 */
+.price-list-container {
     background: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     border-radius: 12px;
-    padding: 0;
+    overflow: hidden;
     margin-bottom: 20px;
 }
 
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px;
+.price-category {
+    border-bottom: 1px solid #eee;
 }
 
-.price-table th,
-.price-table td {
-    padding: 18px 24px;
-    border-bottom: 1px solid #f0f0f0;
-    text-align: left;
-    font-size: 0.95rem;
-    color: #000;
-    /* 全てのテキストを黒に */
+.price-category:last-child {
+    border-bottom: none;
 }
 
-/* テーブルヘッダー (シンプルに) */
-.price-table thead th {
-    background-color: #fff;
-    color: #000;
-    /* ヘッダーも黒に */
-    font-weight: 900;
-    border-bottom: 2px solid #333;
-    padding-top: 25px;
-    padding-bottom: 15px;
-    font-size: 1rem;
-}
-
-/* カテゴリ区切り行 */
-.price-table .separator th {
+/* カテゴリヘッダー（アコーディオンのトリガー） */
+.price-category-title {
     background-color: #fafafa;
-    color: var(--color-primary);
-    text-align: left;
+    width: 100%;
+    padding: 20px 24px;
     font-size: 1.1rem;
     font-weight: 900;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    border-bottom: none;
-}
-
-/* サブカテゴリ行 */
-.price-table .sub-header td {
-    background-color: transparent;
-    color: #000;
-    /* サブカテゴリも黒に */
-    font-weight: bold;
-    font-size: 0.9rem;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    border-bottom: none;
-    padding-left: 24px;
-    text-align: left !important;
-}
-
-/* 価格列 */
-.price-table td:last-child {
-    text-align: right;
-    font-family: var(--font-main);
-    width: 200px;
-}
-
-.price-table .text-red-bold {
     color: var(--color-primary);
-    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    text-align: left;
+    margin: 0;
+}
+
+/* スマホ用のアコーディオンアイコン */
+.price-toggle-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.price-toggle-icon::before,
+.price-toggle-icon::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.price-toggle-icon::before {
+    width: 100%;
+    height: 2px;
+}
+
+.price-toggle-icon::after {
+    height: 100%;
+    width: 2px;
+    transition: opacity 0.3s;
+}
+
+/* 開いている時のアイコン変化（マイナスにする） */
+.price-category-title.is-open .price-toggle-icon::after {
+    opacity: 0;
+}
+
+/* アコーディオンの中身 */
+.price-category-body {
+    /* スマホではデフォルトで閉じる */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fff;
+}
+
+/* サブカテゴリ見出し */
+.price-sub-header {
+    background-color: #f9f9f9;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #000;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+/* アイテム行（定義リスト） */
+.price-row {
+    padding: 15px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    /* スマホ：縦並び（上下配置） */
+    gap: 5px;
+    margin: 0;
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.price-name {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    /* 項目：左寄せ */
+    color: #000;
+    margin: 0;
+    width: 100%;
+}
+
+.price-val {
     font-size: 1.3rem;
+    font-weight: 900;
+    text-align: right;
+    /* 価格：右寄せ */
+    color: var(--color-primary);
+    font-family: var(--font-main);
     line-height: 1.2;
+    margin: 0;
+    width: 100%;
+}
+
+.tax-included {
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: normal;
+    display: block;
+    /* 改行して表示 */
+}
+
+/* --- PC Styles for Price List --- */
+@media (min-width: 768px) {
+
+    /* PCではアコーディオンを無効化（常時展開・リスト表示） */
+    .price-category-title {
+        cursor: default;
+        pointer-events: none;
+        /* クリック不可 */
+        background-color: #fff;
+        border-bottom: 2px solid #333;
+        color: #000;
+        font-size: 1.2rem;
+        padding: 25px 40px 15px;
+    }
+
+    .price-toggle-icon {
+        display: none;
+        /* アイコン非表示 */
+    }
+
+    .price-category-body {
+        max-height: none !important;
+        /* JSのstyleを無視して常時表示 */
+        overflow: visible;
+    }
+
+    .price-sub-header {
+        background: none;
+        padding: 15px 40px 5px;
+        font-size: 1rem;
+        color: #000;
+        border: none;
+        margin-top: 10px;
+        text-decoration: underline;
+        text-decoration-color: #ddd;
+        font-weight: 900;
+    }
+
+    .price-row {
+        flex-direction: row;
+        /* 横並び */
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 12px 40px;
+        /* 余白調整 */
+    }
+
+    .price-name {
+        width: auto;
+    }
+
+    .price-val {
+        width: auto;
+        text-align: right;
+        min-width: 250px;
+    }
+
+    .tax-included {
+        display: inline-block;
+        margin-left: 8px;
+    }
 }
 
 /* 税込価格の縮小表示 */
