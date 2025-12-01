@@ -329,6 +329,39 @@ ul {
     display: block;
 }
 
+/* --- スマホ用ヘッダーお問い合わせボタン --- */
+.header__mobile-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: auto;
+    /* ロゴの右側に配置 */
+    margin-right: 15px;
+    /* ハンバーガーとの間隔 */
+    line-height: 1;
+    transition: opacity 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    word-break: keep-all;
+}
+
+.header__mobile-cta:hover {
+    opacity: 0.8;
+}
+
+/* アイコン的な装飾 */
+/* .header__mobile-cta::before {
+    content: "✉";
+    margin-right: 5px;
+    font-size: 1rem;
+} */
+
 /* Mobile Nav (Hamburger) */
 .header__nav {
     position: fixed;
@@ -437,6 +470,11 @@ ul {
         display: none;
     }
 
+    /* PCではスマホ用ボタンを非表示 */
+    .header__mobile-cta {
+        display: none;
+    }
+
     .header__nav {
         position: static;
         width: auto;
@@ -470,7 +508,7 @@ ul {
     position: relative;
     padding: 0 0 80px;
     /* 変更箇所: 背景をリフォーム後のイメージ画像に変更し、白の半透明レイヤーを重ねて文字を見やすくする */
-    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url('../img/hero-bg-renovation.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url('../img/hero-bg-renovation-p2.png');
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -604,7 +642,7 @@ ul {
 @media (min-width: 768px) {
     .hero {
         padding: 60px 0 80px;
-        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url('../img/hero-bg-renovation-pc.png');
+        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url('../img/hero-bg-renovation-pc-p2.png');
         background-size: cover;
         background-position: center;
         overflow: hidden;
@@ -733,17 +771,18 @@ ul {
 }
 
 .service__img::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  /* ここに指定されたグラデーションを入れます */
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
-  
-  pointer-events: none; /* 下の画像をクリック可能にする */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* ここに指定されたグラデーションを入れます */
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+
+    pointer-events: none;
+    /* 下の画像をクリック可能にする */
 }
 
 .service__body {
