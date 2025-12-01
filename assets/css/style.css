@@ -341,7 +341,7 @@ ul {
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     z-index: 999;
 }
 
@@ -355,6 +355,10 @@ ul {
     flex-direction: column;
     gap: 25px;
     width: 100%;
+}
+
+.nav__item:first-child {
+    margin-top: 20px;
 }
 
 .nav__link {
