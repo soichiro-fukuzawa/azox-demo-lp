@@ -489,6 +489,10 @@ ul {
         align-items: center;
     }
 
+    .nav__item:first-child {
+        margin-top: 0;
+    }
+
     .nav__link {
         font-size: 0.95rem;
         padding: 0;
@@ -1312,7 +1316,15 @@ ul {
     display: none;
 }
 
+.pc-hide {
+    display: block;
+}
+
 @media (min-width: 768px) {
+    .sp-hide {
+        display: block;
+    }
+
     .pc-hide {
         display: none;
     }
