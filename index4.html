@@ -1,0 +1,1321 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO: Title / Description -->
+    <title>原状回復の料金表｜クロス張替え・空室クリーニング（不動産オーナー向け）</title>
+    <meta name="description" content="不動産オーナー向けに原状回復（空室クリーニング・クロス張替え・部分補修）の料金目安をわかりやすく掲載。写真だけでも概算OK。無料見積もり。" />
+
+    <!-- SEO: Canonical / Robots（実URLに差し替え） -->
+    <link rel="canonical" href="https://example.com/" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <!-- SEO: Open Graph（実データに差し替え） -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="原状回復の料金表｜クロス張替え・空室クリーニング" />
+    <meta property="og:description" content="オーナー向けに料金と範囲を見える化。写真だけでも概算OK。無料見積もり。" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/ogp.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Mobile UI -->
+    <meta name="theme-color" content="#0b0f17" />
+
+    <style>
+        /* =========================
+       Mobile-first Design System
+       ========================= */
+        :root {
+            --bg: #0b0f17;
+            --surface: #0f1624;
+            --card: rgba(255, 255, 255, .06);
+            --card2: rgba(255, 255, 255, .09);
+            --text: rgba(255, 255, 255, .92);
+            --muted: rgba(255, 255, 255, .70);
+            --line: rgba(255, 255, 255, .14);
+            --accent: #ff3b30;
+            --accent2: #ffb020;
+            --good: #2ee59d;
+            --shadow: 0 18px 45px rgba(0, 0, 0, .45);
+            --r16: 16px;
+            --r12: 12px;
+            --max: 1120px;
+
+            --pad: 16px;
+            --gap: 12px;
+
+            --fz-12: 12px;
+            --fz-13: 13px;
+            --fz-14: 14px;
+            --fz-15: 15px;
+            --fz-16: 16px;
+            --fz-18: 18px;
+            --fz-22: 22px;
+            --fz-28: 28px;
+
+            --h1: clamp(26px, 7vw, 40px);
+            --h2: clamp(20px, 5.6vw, 28px);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+        }
+
+        body {
+            background: radial-gradient(1200px 600px at 20% 0%, #1a2236 0%, var(--bg) 55%) fixed;
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - (var(--pad)*2)));
+            margin: 0 auto;
+        }
+
+        /* =========================
+       Header (mobile-first)
+       ========================= */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: linear-gradient(to bottom, rgba(11, 15, 23, .88), rgba(11, 15, 23, .55));
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            letter-spacing: .02em;
+            min-width: 0;
+        }
+
+        .brand .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            box-shadow: 0 0 0 4px rgba(255, 59, 48, .12);
+            flex-shrink: 0;
+        }
+
+        .brand span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            font-weight: 800;
+            font-size: var(--fz-14);
+            cursor: pointer;
+            user-select: none;
+            transition: transform .12s ease, background .12s ease, border-color .12s ease;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn.primary {
+            border: 0;
+            background: linear-gradient(135deg, var(--accent), #ff2d55);
+            box-shadow: 0 16px 40px rgba(255, 59, 48, .28);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, .18);
+            box-shadow: none;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            color: var(--muted);
+            font-size: var(--fz-13);
+            line-height: 1.2;
+        }
+
+        .check {
+            width: 18px;
+            height: 18px;
+            border-radius: 6px;
+            background: rgba(46, 229, 157, .16);
+            border: 1px solid rgba(46, 229, 157, .35);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--good);
+            font-weight: 900;
+            font-size: 12px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        /* Mobile nav (drawer) */
+        .menuBtn {
+            padding: 10px 12px;
+            font-size: var(--fz-14);
+        }
+
+        .drawerOverlay {
+            position: fixed;
+            inset: 0;
+            z-index: 70;
+            background: rgba(0, 0, 0, .45);
+            display: none;
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: min(340px, 90vw);
+            background: rgba(15, 22, 36, .92);
+            border-left: 1px solid rgba(255, 255, 255, .12);
+            backdrop-filter: blur(14px);
+            padding: 14px;
+            transform: translateX(105%);
+            transition: transform .18s ease;
+        }
+
+        .drawer a {
+            display: block;
+            padding: 12px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .05);
+            margin-top: 10px;
+            color: rgba(255, 255, 255, .88);
+            font-weight: 800;
+            font-size: var(--fz-14);
+        }
+
+        .drawerHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .drawerHeader strong {
+            font-size: var(--fz-16);
+        }
+
+        .drawerOpen .drawerOverlay {
+            display: block;
+        }
+
+        .drawerOpen .drawer {
+            transform: translateX(0);
+        }
+
+        /* =========================
+       Sections (mobile-first)
+       ========================= */
+        main {
+            padding-bottom: 86px;
+        }
+
+        /* sticky CTA space */
+        section {
+            padding: 22px 0;
+        }
+
+        .sectionTitle {
+            font-size: var(--h2);
+            margin: 0 0 10px;
+            letter-spacing: .01em;
+        }
+
+        .sectionDesc {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: var(--fz-14);
+            line-height: 1.85;
+        }
+
+        .card {
+            border-radius: var(--r16);
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .12);
+            padding: 16px;
+        }
+
+        /* =========================
+       Hero (mobile-first: stacked)
+       ========================= */
+        .hero {
+            padding: 18px 0 10px;
+        }
+
+        .heroCard {
+            border-radius: var(--r16);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .04));
+            border: 1px solid rgba(255, 255, 255, .12);
+            box-shadow: var(--shadow);
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .heroCard::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(900px 300px at 20% 0%, rgba(255, 59, 48, .22), transparent 55%),
+                radial-gradient(700px 260px at 85% 30%, rgba(255, 176, 32, .14), transparent 60%);
+            pointer-events: none;
+        }
+
+        .heroCard>* {
+            position: relative;
+        }
+
+        .heroTitle {
+            font-size: var(--h1);
+            line-height: 1.16;
+            margin: 10px 0 10px;
+            letter-spacing: .01em;
+        }
+
+        .heroSub {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: var(--fz-14);
+            line-height: 1.9;
+        }
+
+        /* Price banner: mobile optimized */
+        .priceBanner {
+            display: grid;
+            gap: 10px;
+            padding: 14px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background:
+                radial-gradient(500px 250px at 15% 10%, rgba(255, 59, 48, .25), transparent 55%),
+                linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .04));
+        }
+
+        .priceTop {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .priceLabel {
+            font-weight: 950;
+            letter-spacing: .08em;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .85);
+            background: rgba(0, 0, 0, .18);
+            border: 1px solid rgba(255, 255, 255, .14);
+            padding: 6px 10px;
+            border-radius: 999px;
+        }
+
+        .priceTag {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .priceTag .yen {
+            font-size: 16px;
+            color: rgba(255, 255, 255, .85);
+            font-weight: 900;
+        }
+
+        .priceTag .num {
+            font-size: clamp(40px, 10vw, 56px);
+            font-weight: 980;
+            letter-spacing: -.02em;
+            color: #fff;
+        }
+
+        .priceTag .tax {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .75);
+            font-weight: 800;
+        }
+
+        .priceNote {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            color: rgba(255, 255, 255, .78);
+            font-size: var(--fz-13);
+            line-height: 1.6;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .14);
+        }
+
+        .heroActions {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .heroActions .btn {
+            width: 100%;
+        }
+
+        .heroMini {
+            margin-top: 10px;
+            display: grid;
+            gap: 8px;
+        }
+
+        /* Benefits cards */
+        .grid1 {
+            display: grid;
+            gap: 12px;
+        }
+
+        /* =========================
+       Pricing: mobile-first cards
+       ========================= */
+        .pricing {
+            border-radius: var(--r16);
+            border: 1px solid rgba(255, 255, 255, .14);
+            overflow: hidden;
+            background: rgba(255, 255, 255, .04);
+        }
+
+        .pricingHeader {
+            padding: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+            display: grid;
+            gap: 10px;
+        }
+
+        .pricingHeader .note {
+            color: var(--muted);
+            font-size: var(--fz-13);
+            line-height: 1.75;
+        }
+
+        .pricingRows {
+            display: grid;
+            gap: 0;
+        }
+
+        .row {
+            padding: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, .10);
+            display: grid;
+            gap: 10px;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .service .name {
+            font-weight: 950;
+        }
+
+        .service .sub {
+            color: var(--muted);
+            font-size: var(--fz-13);
+            line-height: 1.65;
+            margin-top: 4px;
+        }
+
+        .priceCell {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-weight: 950;
+        }
+
+        .priceCell .big {
+            font-size: 22px;
+        }
+
+        .priceCell .small {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 800;
+        }
+
+        .incl {
+            color: rgba(255, 255, 255, .78);
+            font-size: var(--fz-13);
+            line-height: 1.7;
+        }
+
+        .tagHot {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(255, 59, 48, .14);
+            border: 1px solid rgba(255, 59, 48, .30);
+            color: rgba(255, 255, 255, .92);
+            font-size: 12px;
+            font-weight: 950;
+            letter-spacing: .03em;
+            margin-left: 6px;
+        }
+
+        /* =========================
+       Estimator: mobile-first stacked
+       ========================= */
+        .formGrid {
+            display: grid;
+            gap: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: var(--fz-13);
+            color: rgba(255, 255, 255, .86);
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            outline: none;
+            font-size: var(--fz-15);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .hint {
+            color: var(--muted);
+            font-size: var(--fz-12);
+            line-height: 1.7;
+            margin-top: 6px;
+        }
+
+        .resultBox {
+            border-radius: var(--r16);
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .05);
+            padding: 16px;
+            margin-top: 12px;
+        }
+
+        .resultBox .lead {
+            color: var(--muted);
+            font-size: var(--fz-13);
+            margin: 0 0 8px;
+        }
+
+        .resultBox .sum {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 8px 0 8px;
+        }
+
+        .resultBox .sum .num {
+            font-size: 34px;
+            font-weight: 980;
+            letter-spacing: -.02em;
+        }
+
+        .resultBox ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+            color: rgba(255, 255, 255, .80);
+            font-size: var(--fz-13);
+            line-height: 1.9;
+        }
+
+        /* FAQ */
+        details {
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            padding: 12px 14px;
+        }
+
+        details+details {
+            margin-top: 10px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 950;
+        }
+
+        details p {
+            margin: 8px 0 0;
+            color: var(--muted);
+            line-height: 1.85;
+            font-size: var(--fz-14);
+        }
+
+        /* Footer */
+        footer {
+            padding: 24px 0 36px;
+            color: rgba(255, 255, 255, .60);
+            font-size: 12px;
+            line-height: 1.9;
+            border-top: 1px solid rgba(255, 255, 255, .10);
+            margin-top: 18px;
+        }
+
+        /* =========================
+       Sticky CTA (mobile-first: visible)
+       ========================= */
+        .stickyCta {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 12px;
+            width: min(var(--max), calc(100% - 18px));
+            z-index: 60;
+            display: block;
+        }
+
+        .stickyInner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 999px;
+            background: rgba(15, 22, 36, .78);
+            border: 1px solid rgba(255, 255, 255, .14);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, .55);
+        }
+
+        .stickyInner .text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+
+        .stickyInner .text .t1 {
+            font-weight: 950;
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .stickyInner .text .t2 {
+            color: var(--muted);
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .stickyBtns {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .btn.sm {
+            padding: 10px 12px;
+            font-size: 13px;
+        }
+
+        /* =========================
+       Desktop enhancements (min-width)
+       ========================= */
+        @media (min-width: 768px) {
+            :root {
+                --pad: 20px;
+                --gap: 14px;
+            }
+
+            section {
+                padding: 28px 0;
+            }
+
+            .hero {
+                padding: 26px 0 12px;
+            }
+
+            .heroCard {
+                padding: 22px;
+            }
+
+            .heroActions {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .heroActions .btn {
+                width: auto;
+            }
+
+            .grid1 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .heroMini {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            /* Pricing: desktop row layout */
+            .row {
+                display: grid;
+                grid-template-columns: 1.2fr .9fr .9fr;
+                gap: 12px;
+                align-items: center;
+            }
+
+            /* Estimator: 2 columns */
+            .estimator {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+                align-items: start;
+            }
+
+            .resultBox {
+                margin-top: 0;
+                position: sticky;
+                top: 78px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .navRight {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .stickyCta {
+                display: none;
+            }
+
+            /* PCは追従CTA非表示でもOK（必要なら残す） */
+        }
+    </style>
+
+    <!-- SEO: Structured Data（実データに差し替え推奨） -->
+    <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"原状回復サービス（会社名を入れてください）",
+    "url":"https://example.com/",
+    "telephone":"+81-00-0000-0000",
+    "areaServed":"（例）東京都 / 神奈川県",
+    "address":{
+      "@type":"PostalAddress",
+      "addressRegion":"（都道府県）",
+      "addressLocality":"（市区町村）",
+      "streetAddress":"（任意）"
+    },
+    "priceRange":"¥¥",
+    "makesOffer":[
+      { "@type":"Offer", "itemOffered":{"@type":"Service","name":"空室クリーニング"} },
+      { "@type":"Offer", "itemOffered":{"@type":"Service","name":"クロス張替え"} },
+      { "@type":"Offer", "itemOffered":{"@type":"Service","name":"部分補修"} }
+    ]
+  }
+  </script>
+
+    <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"見積は無料ですか？",
+        "acceptedAnswer":{"@type":"Answer","text":"無料です。写真・間取りがあると概算が早くなります。確定は現地状況で決まります。"}
+      },
+      {
+        "@type":"Question",
+        "name":"追加費用が出やすいのはどんな時？",
+        "acceptedAnswer":{"@type":"Answer","text":"下地の大きな損傷、カビ・ヤニの強い汚れ、特殊材料、搬入条件などで変動しやすいです。見積時に明確化します。"}
+      },
+      {
+        "@type":"Question",
+        "name":"管理会社経由でも依頼できますか？",
+        "acceptedAnswer":{"@type":"Answer","text":"可能です。発注フローや書式に合わせて対応します。"}
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <div class="brand" aria-label="サイト名">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>原状回復 料金LP</span>
+                </div>
+
+                <div class="navRight" style="display:flex; gap:10px; align-items:center;">
+                    <a class="btn ghost" href="tel:000-0000-0000" aria-label="電話する">電話</a>
+                    <a class="btn primary" href="#contact">無料見積</a>
+                    <button class="btn menuBtn" id="menuBtn" type="button" aria-label="メニューを開く" aria-controls="drawer"
+                        aria-expanded="false">メニュー</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Drawer -->
+    <div class="drawerOverlay" id="drawerOverlay" aria-hidden="true">
+        <nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+            <div class="drawerHeader">
+                <strong>メニュー</strong>
+                <button class="btn" id="closeBtn" type="button" aria-label="閉じる">閉じる</button>
+            </div>
+            <a href="#pricing">料金表</a>
+            <a href="#estimator">概算</a>
+            <a href="#flow">流れ</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">見積もり</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <div class="hero">
+            <div class="container">
+                <div class="heroCard">
+                    <div class="badge"><span class="check" aria-hidden="true">✓</span><span>写真だけでも概算OK / 最短日程で手配</span>
+                    </div>
+
+                    <h1 class="heroTitle">
+                        原状回復の<strong style="color:#fff;">費用が一瞬でわかる</strong><br />
+                        クロス張替え・空室クリーニング
+                    </h1>
+
+                    <p class="heroSub">
+                        不動産オーナー向けに、価格と範囲を“見える化”。<br />
+                        安さはしっかり伝えつつ、施工品質と対応の早さも担保します。
+                    </p>
+
+                    <div class="priceBanner" aria-label="目玉価格">
+                        <div class="priceTop">
+                            <div class="priceLabel">目玉：空室クリーニング</div>
+                            <div class="badge">まずはここから相談が多い</div>
+                        </div>
+                        <div class="priceTag">
+                            <span class="yen">¥</span>
+                            <span class="num" id="heroPrice">19,800</span>
+                            <span class="tax">（税込〜）</span>
+                        </div>
+                        <div class="priceNote">
+                            <span class="pill"><span class="check">✓</span>水回り</span>
+                            <span class="pill"><span class="check">✓</span>床・窓</span>
+                            <span class="pill"><span class="check">✓</span>簡易ワックス</span>
+                            <span class="pill"><span class="check">✓</span>鍵返却対応</span>
+                        </div>
+                    </div>
+
+                    <div class="heroActions">
+                        <a class="btn primary" href="#contact">無料見積もり（最短当日返信）</a>
+                        <a class="btn" href="#pricing">料金表を見る</a>
+                        <a class="btn ghost" href="#estimator">概算を出す</a>
+                    </div>
+
+                    <div class="heroMini">
+                        <span class="badge">対応：原状回復 / 退去後清掃 / クロス / 部分補修</span>
+                        <span class="badge">対象：区分 / 1棟 / 管理会社経由も可</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BENEFITS -->
+        <section id="benefits">
+            <div class="container">
+                <h2 class="sectionTitle">オーナーの“よくある悩み”をそのまま解決</h2>
+                <p class="sectionDesc">原状回復は「結局いくらかかるのか」が見えにくい領域。判断の手間を減らすため、料金と範囲を整理しました。</p>
+
+                <div class="grid1">
+                    <div class="card">
+                        <h3 style="margin:0 0 8px; font-size:16px;">相場が不明で不安</h3>
+                        <p style="margin:0; color:var(--muted); line-height:1.9; font-size:14px;">
+                            代表的なメニューを“単価”で提示。追加費用が出やすいポイントも明記します。</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin:0 0 8px; font-size:16px;">空室期間を伸ばしたくない</h3>
+                        <p style="margin:0; color:var(--muted); line-height:1.9; font-size:14px;">
+                            見積→発注→施工→完了報告をスムーズに。日程調整もまとめて対応します。</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin:0 0 8px; font-size:16px;">手配が面倒</h3>
+                        <p style="margin:0; color:var(--muted); line-height:1.9; font-size:14px;">
+                            写真ベースの概算や、鍵受け渡し・完了報告など“手離れ”を重視します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="pricing">
+            <div class="container">
+                <h2 class="sectionTitle">料金表（例）</h2>
+                <p class="sectionDesc">オーナー向けに、判断しやすい単位で掲載。実際の金額は現地状況で確定します（無料見積）。</p>
+
+                <div class="pricing" aria-label="料金表">
+                    <div class="pricingHeader">
+                        <div class="badge"><span class="check">✓</span><span>わかりやすい単価 / 含まれる範囲を明記</span></div>
+                        <div class="note">※ 表示は目安（地域・面積・汚れ・材料で変動）／ まず概算→必要なら現地確認で確定見積</div>
+                    </div>
+
+                    <div class="pricingRows">
+                        <div class="row">
+                            <div class="service">
+                                <div class="name">空室クリーニング <span class="tagHot">目玉</span></div>
+                                <div class="sub">退去後の室内清掃一式（1R/1K想定）</div>
+                            </div>
+                            <div class="priceCell"><span class="big">¥19,800</span><span class="small">税込〜</span></div>
+                            <div class="incl">水回り / 床 / 窓 / 簡易仕上げ（範囲は物件により調整）</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="service">
+                                <div class="name">クロス張替え（量産）</div>
+                                <div class="sub">壁紙の張替え（材料グレードで調整）</div>
+                            </div>
+                            <div class="priceCell"><span class="big">¥980</span><span class="small">/㎡ 税込〜</span></div>
+                            <div class="incl">既存撤去 / 下地軽微補修 / 廃材処分（大きな補修は別途）</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="service">
+                                <div class="name">CF（クッションフロア）</div>
+                                <div class="sub">洗面所・トイレ等の床の張替え</div>
+                            </div>
+                            <div class="priceCell"><span class="big">¥3,800</span><span class="small">/㎡ 税込〜</span>
+                            </div>
+                            <div class="incl">材料 / 施工 / 端部処理（面積・形状で変動）</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="service">
+                                <div class="name">部分補修（穴・キズ）</div>
+                                <div class="sub">軽微補修〜範囲補修まで</div>
+                            </div>
+                            <div class="priceCell"><span class="big">¥8,800</span><span class="small">税込〜</span></div>
+                            <div class="incl">現地状況で最適提案（張替えより安く済むケースも）</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="service">
+                                <div class="name">エアコン洗浄（壁掛け）</div>
+                                <div class="sub">退去後のニオイ・汚れ対策</div>
+                            </div>
+                            <div class="priceCell"><span class="big">¥9,900</span><span class="small">/台 税込〜</span>
+                            </div>
+                            <div class="incl">機種で変動（お掃除機能付きは別料金になりがち）</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top:12px; display:grid; gap:10px;">
+                    <a class="btn primary" href="#contact">この料金で見積もり依頼</a>
+                    <a class="btn" href="#estimator">まず概算を出す</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTIMATOR -->
+        <section id="estimator">
+            <div class="container">
+                <h2 class="sectionTitle">概算シミュレーター（目安）</h2>
+                <p class="sectionDesc">ざっくり把握したい方向け。正確な金額は無料見積で確定します。</p>
+
+                <div class="estimator">
+                    <div class="card">
+                        <h3 style="margin:0 0 10px; font-size:16px;">条件を選ぶ</h3>
+                        <div class="formGrid">
+                            <div>
+                                <label for="roomType">部屋タイプ</label>
+                                <select id="roomType">
+                                    <option value="1R">1R/1K</option>
+                                    <option value="1LDK">1LDK</option>
+                                    <option value="2LDK">2LDK</option>
+                                    <option value="3LDK">3LDK以上</option>
+                                </select>
+                                <div class="hint">※広さの目安として仮設定</div>
+                            </div>
+
+                            <div>
+                                <label for="crossArea">クロス張替え（㎡）</label>
+                                <input id="crossArea" type="number" min="0" step="1" value="0" inputmode="numeric" />
+                                <div class="hint">わからなければ0のままでOK（写真・間取りで算出できます）</div>
+                            </div>
+
+                            <div>
+                                <label>追加オプション</label>
+                                <div style="display:grid; gap:8px;">
+                                    <label class="badge" style="justify-content:space-between;">
+                                        <span><input type="checkbox" id="optAircon" /> エアコン洗浄（1台）</span>
+                                        <strong style="color:#fff;">+¥9,900</strong>
+                                    </label>
+                                    <label class="badge" style="justify-content:space-between;">
+                                        <span><input type="checkbox" id="optRepair" /> 部分補修（軽微）</span>
+                                        <strong style="color:#fff;">+¥8,800</strong>
+                                    </label>
+                                    <label class="badge" style="justify-content:space-between;">
+                                        <span><input type="checkbox" id="optCF" /> CF張替え（2㎡想定）</span>
+                                        <strong style="color:#fff;">+¥7,600</strong>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button class="btn primary" id="calcBtn" type="button">概算を更新</button>
+                            <div class="hint">※概算は参考。現地状況により変動します。</div>
+                        </div>
+                    </div>
+
+                    <div class="resultBox" aria-live="polite">
+                        <p class="lead">概算合計（目安）</p>
+                        <div class="sum">
+                            <span class="num" id="sumPrice">¥0</span>
+                            <span class="sub" id="sumNote" style="color:var(--muted); font-weight:800;">（税込目安）</span>
+                        </div>
+                        <div class="badge" style="margin-bottom:8px;"><span
+                                class="check">✓</span><span>このまま見積フォームに転記できます</span></div>
+                        <ul id="sumBreakdown"></ul>
+                        <div style="margin-top:12px; display:grid; gap:10px;">
+                            <a class="btn primary" href="#contact" id="toContactWithEstimate">この概算で見積もり依頼</a>
+                            <a class="btn" href="#pricing">料金表に戻る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLOW -->
+        <section id="flow">
+            <div class="container">
+                <h2 class="sectionTitle">施工までの流れ</h2>
+                <p class="sectionDesc">オーナー側の手間を最小化する前提で設計しています。</p>
+
+                <div class="grid1">
+                    <div class="card">
+                        <h3 style="margin:0 0 8px; font-size:16px;">1. 問い合わせ</h3>
+                        <p style="margin:0; color:var(--muted); line-height:1.9; font-size:14px;">
+                            物件エリア（市区町村まで）・間取り・希望日程・写真があれば添付。</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin:0 0 8px; font-size:16px;">2. 概算→確定見積</h3>
+                        <p style="margin:0; color:var(--muted); line-height:1.9; font-size:14px;">
+                            写真/間取りで概算。必要なら現地確認して確定見積を提示。</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin:0 0 8px; font-size:16px;">3. 施工→完了報告</h3>
+                        <p style="margin:0; color:var(--muted); line-height:1.9; font-size:14px;">
+                            日程確定後に施工。完了報告（写真）・鍵返却まで対応可能。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="container">
+                <h2 class="sectionTitle">よくある質問</h2>
+                <p class="sectionDesc">オーナー/管理会社からよく出る確認事項。</p>
+
+                <details>
+                    <summary>見積は無料ですか？</summary>
+                    <p>無料です。写真・間取りがあると概算が早くなります。確定は現地状況で決まります。</p>
+                </details>
+                <details>
+                    <summary>追加費用が出やすいのはどんな時？</summary>
+                    <p>下地の大きな損傷、カビ・ヤニの強い汚れ、特殊材料、搬入条件などで変動しやすいです。見積時に明確化します。</p>
+                </details>
+                <details>
+                    <summary>管理会社経由でも依頼できますか？</summary>
+                    <p>可能です。発注フローや書式に合わせて対応します。</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="sectionTitle">無料見積もり</h2>
+                <p class="sectionDesc">入力は最小限。まずは概算だけでもOKです。</p>
+
+                <div class="card">
+                    <form id="quoteForm" novalidate>
+                        <div class="formGrid">
+                            <div>
+                                <label for="name">お名前（または法人名）*</label>
+                                <input id="name" name="name" required placeholder="例：山田 太郎 / 株式会社◯◯"
+                                    autocomplete="name" />
+                            </div>
+
+                            <div>
+                                <label for="contactInfo">メール or 電話（どちらか必須）*</label>
+                                <input id="contactInfo" name="contactInfo"
+                                    placeholder="例：example@mail.com / 090-xxxx-xxxx" autocomplete="email" />
+                                <div class="hint">※どちらか入力してください</div>
+                            </div>
+
+                            <div>
+                                <label for="area">物件エリア（市区町村まで）*</label>
+                                <input id="area" name="area" required placeholder="例：渋谷区 / 横浜市中区"
+                                    autocomplete="address-level2" />
+                            </div>
+
+                            <div>
+                                <label for="details">内容（間取り/希望/状況）</label>
+                                <textarea id="details" name="details"
+                                    placeholder="例：1K 退去後。クロス一部とクリーニング。希望：来週中。写真あり。"></textarea>
+                            </div>
+
+                            <input type="hidden" id="estimatePayload" name="estimatePayload" />
+
+                            <button class="btn primary" type="submit">この内容で送信（ダミー）</button>
+                            <p style="margin:0; color:rgba(255,255,255,.55); font-size:12px; line-height:1.9;">
+                                ※このテンプレは送信処理なしです。実運用では送信先（フォームサービス / 自前API）に接続してください。<br />
+                                ※表示価格は目安。確定見積で明記します。
+                            </p>
+
+                            <noscript>
+                                <p style="margin:0; color:rgba(255,255,255,.75); font-size:12px; line-height:1.9;">
+                                    JavaScriptが無効です。お電話でのご相談：000-0000-0000
+                                </p>
+                            </noscript>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div>© 原状回復 料金LP（テンプレ）</div>
+                <div>表記：税込目安 / 実際の金額は無料見積で確定</div>
+            </div>
+        </footer>
+
+        <!-- Sticky CTA (mobile) -->
+        <div class="stickyCta" aria-label="追従CTA">
+            <div class="stickyInner">
+                <div class="text">
+                    <div class="t1">原状回復の見積：最短当日返信</div>
+                    <div class="t2">写真だけでも概算OK／料金表あり</div>
+                </div>
+                <div class="stickyBtns">
+                    <a class="btn sm ghost" href="tel:000-0000-0000">電話</a>
+                    <a class="btn sm primary" href="#contact">無料見積</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Smooth scroll
+        document.addEventListener('click', (e) => {
+            const a = e.target.closest('a[href^="#"]');
+            if (!a) return;
+            const id = a.getAttribute('href');
+            if (id.length <= 1) return;
+            const el = document.querySelector(id);
+            if (!el) return;
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', id);
+        });
+
+        // Drawer
+        const overlay = document.getElementById('drawerOverlay');
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+
+        function openDrawer() {
+            document.documentElement.classList.add('drawerOpen');
+            menuBtn.setAttribute('aria-expanded', 'true');
+            overlay.setAttribute('aria-hidden', 'false');
+        }
+        function closeDrawer() {
+            document.documentElement.classList.remove('drawerOpen');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+        menuBtn.addEventListener('click', openDrawer);
+        closeBtn.addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeDrawer();
+        });
+
+        // Estimator
+        const PRICES = {
+            cleaningBase: { "1R": 19800, "1LDK": 29800, "2LDK": 39800, "3LDK": 49800 },
+            crossPerM2: 980,
+            optAircon: 9900,
+            optRepair: 8800,
+            optCF: 7600
+        };
+
+        const roomType = document.getElementById('roomType');
+        const crossArea = document.getElementById('crossArea');
+        const optAircon = document.getElementById('optAircon');
+        const optRepair = document.getElementById('optRepair');
+        const optCF = document.getElementById('optCF');
+        const calcBtn = document.getElementById('calcBtn');
+
+        const sumPrice = document.getElementById('sumPrice');
+        const sumBreakdown = document.getElementById('sumBreakdown');
+        const estimatePayload = document.getElementById('estimatePayload');
+
+        const formatYen = (n) => "¥" + n.toLocaleString('ja-JP');
+
+        function calcEstimate() {
+            const type = roomType.value;
+            const area = Math.max(0, Number(crossArea.value || 0));
+
+            const breakdown = [];
+            let total = 0;
+
+            const cleaning = PRICES.cleaningBase[type] ?? PRICES.cleaningBase["1R"];
+            breakdown.push({ label: `空室クリーニング（${type}）`, amount: cleaning });
+            total += cleaning;
+
+            if (area > 0) {
+                const cross = Math.round(area * PRICES.crossPerM2);
+                breakdown.push({ label: `クロス張替え（量産 ${area}㎡）`, amount: cross });
+                total += cross;
+            } else {
+                breakdown.push({ label: "クロス張替え（未入力）", amount: 0, note: "写真/間取りから算出可" });
+            }
+
+            if (optAircon.checked) { breakdown.push({ label: "エアコン洗浄（1台）", amount: PRICES.optAircon }); total += PRICES.optAircon; }
+            if (optRepair.checked) { breakdown.push({ label: "部分補修（軽微）", amount: PRICES.optRepair }); total += PRICES.optRepair; }
+            if (optCF.checked) { breakdown.push({ label: "CF張替え（2㎡想定）", amount: PRICES.optCF }); total += PRICES.optCF; }
+
+            sumPrice.textContent = formatYen(total);
+
+            sumBreakdown.innerHTML = "";
+            breakdown.forEach(item => {
+                const li = document.createElement('li');
+                const main = `${item.label}：${formatYen(item.amount)}`;
+                li.textContent = item.note ? `${main}（${item.note}）` : main;
+                sumBreakdown.appendChild(li);
+            });
+
+            estimatePayload.value = JSON.stringify({
+                roomType: type,
+                crossArea: area,
+                options: { aircon: optAircon.checked, repair: optRepair.checked, cf: optCF.checked },
+                total
+            });
+        }
+
+        calcBtn?.addEventListener('click', calcEstimate);
+        [roomType, crossArea, optAircon, optRepair, optCF].forEach(el => {
+            el?.addEventListener('change', calcEstimate);
+            el?.addEventListener('input', calcEstimate);
+        });
+        calcEstimate();
+
+        // Dummy form validation
+        const quoteForm = document.getElementById('quoteForm');
+        quoteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name');
+            const contactInfo = document.getElementById('contactInfo');
+            const area = document.getElementById('area');
+
+            const invalid = [];
+            if (!name.value.trim()) invalid.push("お名前（または法人名）");
+            if (!(contactInfo.value || "").trim()) invalid.push("メール or 電話");
+            if (!area.value.trim()) invalid.push("物件エリア");
+
+            if (invalid.length) {
+                alert("未入力があります：\n・" + invalid.join("\n・"));
+                return;
+            }
+            alert("（デモ）入力内容を受け付けました。\n実運用では送信処理を接続してください。");
+            quoteForm.reset();
+            calcEstimate();
+        });
+    </script>
+</body>
+
+</html>
