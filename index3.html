@@ -585,6 +585,268 @@
             vertical-align: middle;
         }
 
+        /* ─── SIMULATOR ─── */
+        .sim-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .sim-step {
+            margin-bottom: 24px;
+        }
+
+        .sim-step-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .sim-step-num {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: #fff;
+            font-family: var(--font-en);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sim-step-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        /* 間間selects */
+        .sim-type-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .sim-type-btn {
+            position: relative;
+            background: #fff;
+            border: 2px solid var(--gray-lt);
+            border-radius: 10px;
+            padding: 12px 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .sim-type-btn input[type="radio"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .sim-type-btn .type-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+            pointer-events: none;
+        }
+
+        .sim-type-btn .type-price {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 3px;
+            pointer-events: none;
+        }
+
+        .sim-type-btn:has(input:checked),
+        .sim-type-btn.checked {
+            border-color: var(--red);
+            background: #FFF5F5;
+        }
+
+        .sim-type-btn:has(input:checked) .type-name,
+        .sim-type-btn.checked .type-name {
+            color: var(--red);
+        }
+
+        /* オプションチェック */
+        .sim-options {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .sim-opt {
+            position: relative;
+            background: #fff;
+            border: 2px solid var(--gray-lt);
+            border-radius: 10px;
+            transition: border-color .2s, background .2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .sim-opt input[type="checkbox"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .sim-opt-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            gap: 12px;
+            pointer-events: none;
+        }
+
+        .sim-opt-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sim-opt-check {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 5px;
+            border: 2px solid var(--gray-lt);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s, border-color .2s;
+        }
+
+        .sim-opt-check svg {
+            width: 13px;
+            height: 13px;
+            opacity: 0;
+            transition: opacity .15s;
+        }
+
+        .sim-opt-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .sim-opt-desc {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 1px;
+        }
+
+        .sim-opt-price {
+            flex-shrink: 0;
+            font-family: var(--font-en);
+            font-size: 16px;
+            color: var(--gray);
+            white-space: nowrap;
+        }
+
+        .sim-opt:has(input:checked),
+        .sim-opt.checked {
+            border-color: var(--red);
+            background: #FFF5F5;
+        }
+
+        .sim-opt:has(input:checked) .sim-opt-check,
+        .sim-opt.checked .sim-opt-check {
+            background: var(--red);
+            border-color: var(--red);
+        }
+
+        .sim-opt:has(input:checked) .sim-opt-check svg,
+        .sim-opt.checked .sim-opt-check svg {
+            opacity: 1;
+        }
+
+        .sim-opt:has(input:checked) .sim-opt-price,
+        .sim-opt.checked .sim-opt-price {
+            color: var(--red);
+        }
+
+        /* 合計表示 */
+        .sim-result {
+            margin-top: 20px;
+            background: var(--navy);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .sim-result-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .sim-result-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .5);
+            font-weight: 500;
+        }
+
+        .sim-result-val {
+            font-family: var(--font-en);
+            font-size: 15px;
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .sim-result-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, .15);
+            margin: 12px 0;
+        }
+
+        .sim-result-total-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+
+        .sim-result-total-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .7);
+            font-weight: 700;
+        }
+
+        .sim-result-total {
+            font-family: var(--font-en);
+            font-size: 34px;
+            color: var(--red);
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .sim-result-note {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .4);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .sim-result .btn-primary {
+            margin-top: 16px;
+            font-size: 15px;
+            padding: 14px 20px;
+        }
+
         /* ─── FLOW SECTION ─── */
         .flow-wrap {
             max-width: 720px;
@@ -983,6 +1245,27 @@
                 font-size: 15px;
             }
 
+            .sim-type-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 10px;
+            }
+
+            .sim-type-btn {
+                padding: 14px 8px;
+            }
+
+            .sim-type-btn .type-name {
+                font-size: 16px;
+            }
+
+            .sim-result {
+                padding: 24px;
+            }
+
+            .sim-result-total {
+                font-size: 40px;
+            }
+
             .flow-item {
                 gap: 24px;
             }
@@ -1322,6 +1605,188 @@
         </div>
     </section>
 
+    <!-- SIMULATOR -->
+    <section class="section" id="simulator" aria-labelledby="sim-heading">
+        <div class="sim-wrap reveal">
+            <div style="text-align:center; margin-bottom:12px;">
+                <span class="sec-label">費用シミュレーター</span>
+            </div>
+            <h2 class="sec-title" id="sim-heading">概算費用を今すぐ確認</h2>
+            <p class="sec-sub">間間タイプと必要なサービスを選んで、すぐに合計額をチェックできます。</p>
+
+            <!-- Step 1: 間間タイプ -->
+            <div class="sim-step">
+                <div class="sim-step-label">
+                    <div class="sim-step-num">1</div>
+                    <div class="sim-step-title">お物件の間間タイプを選んでください</div>
+                </div>
+                <div class="sim-type-grid" role="radiogroup" aria-label="間間タイプ">
+                    <label class="sim-type-btn checked">
+                        <input type="radio" name="sim-type" value="1K" checked>
+                        <div class="type-name">1K</div>
+                        <div class="type-price">基準型</div>
+                    </label>
+                    <label class="sim-type-btn">
+                        <input type="radio" name="sim-type" value="1DK">
+                        <div class="type-name">1DK</div>
+                        <div class="type-price">基準型</div>
+                    </label>
+                    <label class="sim-type-btn">
+                        <input type="radio" name="sim-type" value="2DK">
+                        <div class="type-name">2DK</div>
+                        <div class="type-price">中規模</div>
+                    </label>
+                    <label class="sim-type-btn">
+                        <input type="radio" name="sim-type" value="2LDK">
+                        <div class="type-name">2LDK</div>
+                        <div class="type-price">中規模</div>
+                    </label>
+                    <label class="sim-type-btn">
+                        <input type="radio" name="sim-type" value="3LDK">
+                        <div class="type-name">3LDK</div>
+                        <div class="type-price">大型</div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 2: オプション -->
+            <div class="sim-step">
+                <div class="sim-step-label">
+                    <div class="sim-step-num">2</div>
+                    <div class="sim-step-title">必要なサービスを選んでください</div>
+                </div>
+                <div class="sim-options" role="group" aria-label="オプション選択">
+                    <label class="sim-opt" data-key="cross">
+                        <input type="checkbox" name="sim-opt" value="cross">
+                        <div class="sim-opt-inner">
+                            <div class="sim-opt-left">
+                                <div class="sim-opt-check">
+                                    <svg viewBox="0 0 13 13" fill="none" stroke="#fff" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2 7l3 3 6-6" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="sim-opt-name">クロス張り替え（壁面＋天井）</div>
+                                    <div class="sim-opt-desc">間間に応じた面積で算出</div>
+                                </div>
+                            </div>
+                            <div class="sim-opt-price" data-price="0">¥0</div>
+                        </div>
+                    </label>
+                    <label class="sim-opt" data-key="floor">
+                        <input type="checkbox" name="sim-opt" value="floor">
+                        <div class="sim-opt-inner">
+                            <div class="sim-opt-left">
+                                <div class="sim-opt-check">
+                                    <svg viewBox="0 0 13 13" fill="none" stroke="#fff" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2 7l3 3 6-6" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="sim-opt-name">フロア張り替え</div>
+                                    <div class="sim-opt-desc">間間に応じた面積で算出</div>
+                                </div>
+                            </div>
+                            <div class="sim-opt-price" data-price="0">¥0</div>
+                        </div>
+                    </label>
+                    <label class="sim-opt" data-key="cleaning">
+                        <input type="checkbox" name="sim-opt" value="cleaning">
+                        <div class="sim-opt-inner">
+                            <div class="sim-opt-left">
+                                <div class="sim-opt-check">
+                                    <svg viewBox="0 0 13 13" fill="none" stroke="#fff" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2 7l3 3 6-6" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="sim-opt-name">空室クリーニング（退去後）</div>
+                                    <div class="sim-opt-desc">エアコン・浴室・トイレ含む</div>
+                                </div>
+                            </div>
+                            <div class="sim-opt-price" data-price="0">¥0</div>
+                        </div>
+                    </label>
+                    <label class="sim-opt" data-key="aircon">
+                        <input type="checkbox" name="sim-opt" value="aircon">
+                        <div class="sim-opt-inner">
+                            <div class="sim-opt-left">
+                                <div class="sim-opt-check">
+                                    <svg viewBox="0 0 13 13" fill="none" stroke="#fff" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2 7l3 3 6-6" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="sim-opt-name">エアコン分解洗涤</div>
+                                    <div class="sim-opt-desc">¥8,000 / 台</div>
+                                </div>
+                            </div>
+                            <div class="sim-opt-price" data-price="0">¥0</div>
+                        </div>
+                    </label>
+                    <label class="sim-opt" data-key="repair">
+                        <input type="checkbox" name="sim-opt" value="repair">
+                        <div class="sim-opt-inner">
+                            <div class="sim-opt-left">
+                                <div class="sim-opt-check">
+                                    <svg viewBox="0 0 13 13" fill="none" stroke="#fff" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2 7l3 3 6-6" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="sim-opt-name">壁・天井の補修・塗り直し</div>
+                                    <div class="sim-opt-desc">傷や汚れの補修対応</div>
+                                </div>
+                            </div>
+                            <div class="sim-opt-price" data-price="0">¥0</div>
+                        </div>
+                    </label>
+                    <label class="sim-opt" data-key="waste">
+                        <input type="checkbox" name="sim-opt" value="waste">
+                        <div class="sim-opt-inner">
+                            <div class="sim-opt-left">
+                                <div class="sim-opt-check">
+                                    <svg viewBox="0 0 13 13" fill="none" stroke="#fff" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2 7l3 3 6-6" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="sim-opt-name">廃材処分（産廃対応）</div>
+                                    <div class="sim-opt-desc">リフォーム廃材の収集・処分</div>
+                                </div>
+                            </div>
+                            <div class="sim-opt-price" data-price="0">¥0</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 3: 結果 -->
+            <div class="sim-result" aria-live="polite">
+                <div id="sim-breakdown"></div>
+                <div class="sim-result-divider"></div>
+                <div class="sim-result-total-row">
+                    <div class="sim-result-total-label">合計（税込・材料費込み）</div>
+                    <div class="sim-result-total" id="sim-total">¥0</div>
+                </div>
+                <p class="sim-result-note">※ 概算額です。実際の費用は現地調査により変動することがあります。</p>
+                <a href="#estimate" class="btn-primary">
+                    無料で見積もりを受け取る
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 10h12M12 6l4 4-4 4" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- FLOW -->
     <section class="section" aria-labelledby="flow-heading">
         <div style="text-align:center; margin-bottom:12px;">
@@ -1493,6 +1958,104 @@
                 btn.setAttribute('aria-expanded', String(!isOpen));
             });
         });
+
+        // ─── SIMULATOR ───
+        (function () {
+            // 間間別データ（壁面㎡・天井㎡・エアコン台数・クリーニング基価・補修基価・廃材基価）
+            const TYPES = {
+                '1K': { wallM2: 28, ceilM2: 18, ac: 1, clean: 42000, repair: 15000, waste: 20000 },
+                '1DK': { wallM2: 35, ceilM2: 22, ac: 1, clean: 48000, repair: 18000, waste: 22000 },
+                '2DK': { wallM2: 52, ceilM2: 32, ac: 2, clean: 68000, repair: 25000, waste: 28000 },
+                '2LDK': { wallM2: 60, ceilM2: 38, ac: 2, clean: 78000, repair: 30000, waste: 32000 },
+                '3LDK': { wallM2: 78, ceilM2: 48, ac: 3, clean: 98000, repair: 38000, waste: 38000 }
+            };
+            const CROSS_WALL = 3200;
+            const CROSS_CEIL = 2800;
+            const FLOOR_M2 = 6500;
+            const AC_PRICE = 8000;
+
+            function floorM2(type) { return Math.round(TYPES[type].wallM2 * 0.6); }
+
+            let currentType = '1K';
+
+            function calc() {
+                const t = TYPES[currentType];
+                const items = [];
+
+                if (document.querySelector('[value="cross"]:checked')) {
+                    const v = t.wallM2 * CROSS_WALL + t.ceilM2 * CROSS_CEIL;
+                    items.push({ label: 'クロス張り替え（壁面＋天井）', price: v });
+                    document.querySelector('[data-key="cross"] .sim-opt-price').textContent = fmt(v);
+                } else {
+                    document.querySelector('[data-key="cross"] .sim-opt-price').textContent = '¥0';
+                }
+
+                if (document.querySelector('[value="floor"]:checked')) {
+                    const v = floorM2(currentType) * FLOOR_M2;
+                    items.push({ label: 'フロア張り替え', price: v });
+                    document.querySelector('[data-key="floor"] .sim-opt-price').textContent = fmt(v);
+                } else {
+                    document.querySelector('[data-key="floor"] .sim-opt-price').textContent = '¥0';
+                }
+
+                if (document.querySelector('[value="cleaning"]:checked')) {
+                    items.push({ label: '空室クリーニング', price: t.clean });
+                    document.querySelector('[data-key="cleaning"] .sim-opt-price').textContent = fmt(t.clean);
+                } else {
+                    document.querySelector('[data-key="cleaning"] .sim-opt-price').textContent = '¥0';
+                }
+
+                if (document.querySelector('[value="aircon"]:checked')) {
+                    const v = t.ac * AC_PRICE;
+                    items.push({ label: 'エアコン分解洗涤(' + t.ac + '台)', price: v });
+                    document.querySelector('[data-key="aircon"] .sim-opt-price').textContent = fmt(v);
+                } else {
+                    document.querySelector('[data-key="aircon"] .sim-opt-price').textContent = '¥0';
+                }
+
+                if (document.querySelector('[value="repair"]:checked')) {
+                    items.push({ label: '壁・天井の補修', price: t.repair });
+                    document.querySelector('[data-key="repair"] .sim-opt-price').textContent = fmt(t.repair);
+                } else {
+                    document.querySelector('[data-key="repair"] .sim-opt-price').textContent = '¥0';
+                }
+
+                if (document.querySelector('[value="waste"]:checked')) {
+                    items.push({ label: '廃材処分', price: t.waste });
+                    document.querySelector('[data-key="waste"] .sim-opt-price').textContent = fmt(t.waste);
+                } else {
+                    document.querySelector('[data-key="waste"] .sim-opt-price').textContent = '¥0';
+                }
+
+                const total = items.reduce((s, i) => s + i.price, 0);
+                document.getElementById('sim-total').textContent = fmt(total);
+
+                const bd = document.getElementById('sim-breakdown');
+                bd.innerHTML = items.map(i =>
+                    '<div class="sim-result-row"><span class="sim-result-label">' + i.label + '</span><span class="sim-result-val">' + fmt(i.price) + '</span></div>'
+                ).join('');
+            }
+
+            function fmt(n) { return '¥' + n.toLocaleString(); }
+
+            document.querySelectorAll('[name="sim-type"]').forEach(r => {
+                r.addEventListener('change', function () {
+                    currentType = this.value;
+                    document.querySelectorAll('.sim-type-btn').forEach(b => b.classList.remove('checked'));
+                    this.closest('.sim-type-btn').classList.add('checked');
+                    calc();
+                });
+            });
+
+            document.querySelectorAll('[name="sim-opt"]').forEach(cb => {
+                cb.addEventListener('change', function () {
+                    this.closest('.sim-opt').classList.toggle('checked', this.checked);
+                    calc();
+                });
+            });
+
+            calc();
+        })();
     </script>
 </body>
 
